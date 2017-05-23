@@ -38,20 +38,30 @@
     -->
     <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
 
-    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <!--<link rel="stylesheet" type="text/css" href="css/index.css" />-->
+    <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/css/bootstrap.min.css" />
+    <!-- Latest compiled and minified CSS -->
     <title>Hello World</title>
 </head>
 
 <body ng-controller="mainController">
-    {{pokemon}}
-    <button ng-click="getPokemon()">Buscar</button>
-    <div class="app">
+    <h1>
+        {{pokemon.name}}
+    </h1> 
+    <img src="http://pokeapi.co/media/sprites/pokemon/{{pokemon.id}}.png" alt="">
+    <ul ng-repeat="type in pokemon.types">
+        <li>
+            {{type.type.name}}
+        </li>
+    </ul>
+    <button class="btn btn-primary" ng-click="getPokemon()">Buscar</button>
+    <!--<div class="app">
         <h1>PhoneGap</h1>
         <div id="deviceready" class="blink">
             <p class="event listening">Connecting to Device</p>
             <p class="event received">Device is Ready</p>
         </div>
-    </div>
+    </div>-->
     <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript" src="cordova.js"></script>
